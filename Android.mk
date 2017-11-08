@@ -2,6 +2,8 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
+LOCAL_VENDOR_MODULE := true
+
 LOCAL_MODULE := libcyanogen-dsp
 
 LOCAL_MODULE_TAGS := optional
@@ -29,11 +31,13 @@ LOCAL_C_INCLUDES += \
 	frameworks/base/include \
 	hardware/libhardware/include \
 	system/core/include \
+	system/core/base/include \
 	system/media/audio_effects/include \
 # terminator
 
 LOCAL_SHARED_LIBRARIES := \
-	libcutils
+	libcutils \
+	liblog
 
 include $(BUILD_SHARED_LIBRARY)
 
